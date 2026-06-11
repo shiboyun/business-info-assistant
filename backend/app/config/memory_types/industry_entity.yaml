@@ -1,0 +1,28 @@
+memory_type: industry_entity
+description: |
+  行业实体 - 记录研究过的公司、行业、技术等实体的基本事实。
+directory: "user/{user_id}/memories/entities"
+filename_template: "{entity_name}.md"
+embedding_template: "实体: {entity_name}\n行业: {industry}\n关键事实: {key_facts}"
+
+fields:
+  - name: entity_name
+    type: string
+    description: 实体名称，唯一标识
+    merge_op: immutable
+  - name: entity_type
+    type: string
+    description: 实体类型（company/industry/technology/product/policy）
+    merge_op: replace
+  - name: industry
+    type: string
+    description: 所属行业
+    merge_op: replace
+  - name: key_facts
+    type: string
+    description: 关键事实，支持增量更新
+    merge_op: patch
+  - name: last_researched
+    type: string
+    description: 最近研究时间
+    merge_op: replace

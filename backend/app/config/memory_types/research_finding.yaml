@@ -1,0 +1,29 @@
+memory_type: research_finding
+description: |
+  研究发现与结论 - 跨会话可复用的研究成果。
+  提取研究过程中形成的事实结论、数据分析结果、趋势判断。
+directory: "user/{user_id}/memories/findings"
+filename_template: "{topic}.md"
+embedding_template: "研究主题: {topic}\n结论: {conclusion}"
+
+fields:
+  - name: topic
+    type: string
+    description: 研究主题，作为唯一标识
+    merge_op: immutable
+  - name: conclusion
+    type: string
+    description: 核心结论，支持增量补充
+    merge_op: patch
+  - name: confidence
+    type: string
+    description: 结论置信度（高/中/低/推测）
+    merge_op: replace
+  - name: sources
+    type: string
+    description: 信息来源列表
+    merge_op: sum
+  - name: related_entities
+    type: string
+    description: 相关行业实体名称列表
+    merge_op: sum
