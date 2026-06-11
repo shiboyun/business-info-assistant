@@ -1,0 +1,150 @@
+.newchat-page {
+  padding: 28px 40px;
+  margin: 0 auto;
+  max-width: 862px;
+  min-width: 400px;
+
+  .newchat-page__header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .newchat-page__sender {
+    margin-top: 20px;
+  }
+
+  // 推荐问题区域 - 标题和问题在同一行
+  .newchat-page__questions-row {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .questions-label {
+      font-size: 13px;
+      color: #8c8c8c;
+      flex-shrink: 0;
+    }
+
+    .questions-list {
+      display: flex;
+      gap: 12px;
+    }
+
+    .question-tag {
+      font-size: 12px;
+      color: #595959;
+      cursor: pointer;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #1890ff;
+      }
+
+      &::before {
+        content: '#';
+        color: #d9d9d9;
+        margin-right: 2px;
+      }
+    }
+  }
+
+  // 精选资讯区域
+  .newchat-page__section {
+    margin-top: 28px;
+
+    .section-header {
+      margin-bottom: 16px;
+
+      .section-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #262626;
+      }
+    }
+  }
+
+  // 精选资讯列表
+  .newchat-page__news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newchat-page__news-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #fafafa;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #f0f5ff;
+    }
+
+    .news-card__body {
+      flex: 1;
+      min-width: 0;
+
+      .news-card__title {
+        font-size: 15px;
+        font-weight: 500;
+        color: #262626;
+        line-height: 1.4;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .news-card__info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+
+        .info-tag {
+          font-size: 12px;
+          color: #8c8c8c;
+          padding: 1px 6px;
+          background: #f0f0f0;
+          border-radius: 4px;
+        }
+
+        .info-location {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 12px;
+          color: #8c8c8c;
+        }
+      }
+    }
+
+    .news-card__meta {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #bfbfbf;
+      margin-left: 16px;
+    }
+  }
+
+  .news-loading {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .news-empty {
+    padding: 40px;
+    text-align: center;
+    color: #bfbfbf;
+    font-size: 13px;
+  }
+}
